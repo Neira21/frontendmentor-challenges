@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.list-products{
+  display: grid;
+  /*en 3 columnas*/
+  grid-template-columns: repeat(3, 1fr);
+  /* center */
+  place-content: center;
+  gap: 7px;
+}
