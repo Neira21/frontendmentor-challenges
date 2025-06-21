@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Bento grid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,589;1,9..40,589&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            Purple500: 'hsl(256, 67%, 59%)',
+            Purple100: 'hsl(254, 88%, 90%)',
+            Yellow100: 'hsl(31, 66%, 93%)',
+            Yellow500: 'hsl(39, 100%, 71%)',
+            white: 'hsl(0, 0%, 100%)',
+            whitebody: 'hsl(0, 0%, 97%)',
+            black: 'hsl(0, 0%, 0%)',
+          },
+          fontSize: {
+            xlgText: '3rem',
+            lgText: '2.75rem',
+            mdText: '2rem',
+            smText: '1.5rem',
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+<body class="bg-whitebody min-h-screen font-dm-sans leading-none grid place-content-center text-[18px]">
+  <div class="grid-bento">
+    <div class="item bg-Yellow100">
+      <p class="text-lgText">Create and schedule content <em class="text-Purple500">quicker</em>.</p>
+      <img src="./assets/images/illustration-create-post.webp" alt="">
+    </div>
+
+    <div class="item bg-Purple500">
+      <p class="text-white text-xlgText">Social Media <span class="text-Yellow500">10x</span> <em>Faster</em> with AI</p>
+      <img src="./assets/images/illustration-five-stars.webp" alt="">
+      <p class="text-smText text-white">Over 4,000 5-star reviews</p>
+    </div>
+
+    <div class="item bg-Purple100">
+      <p class="text-lgText">Schedule to social media.</p>
+      <img src="/assets/images/illustration-schedule-posts.webp" alt="">
+      <p class="text-smText">Optimize post timings to publish content at the perfect time for your audience.</p>
+    </div>
+
+    <div class="item bg-Yellow500">
+      <p class="text-lgText">Write your content using AI.</p>
+      <img src="assets/images/illustration-ai-content.webp" alt="">
+    </div>
+
+    <div class="item bg-white">
+      <img src="assets/images/illustration-multiple-platforms.webp" alt="">
+      <p class="text-mdText">Manage multiple accounts and platforms.</p>
+    </div>
+
+    <div class="item bg-Yellow500">
+      <p class="text-mdText">Maintain a consistent posting schedule.</p>
+      <img src="assets/images/illustration-consistent-schedule.webp" alt="">
+    </div>
+
+    <div class="item bg-white">
+      <p class="text-smText"><span class="text-xlgText">>56%</span> faster audience growth</p>
+      <img src="assets/images/illustration-audience-growth.webp" alt="">
+    </div>
+    
+
+    <div class="item bg-Purple500">
+      <img src="assets/images/illustration-grow-followers.webp" alt="">
+      <p class="text-lgText text-white">Grow followers with non-stop content.</p>
+    </div>
+    
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
