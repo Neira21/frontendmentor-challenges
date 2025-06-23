@@ -558,10 +558,6 @@ video {
   position: relative;
 }
 
-.top-\[-10px\] {
-  top: -10px;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -595,10 +591,6 @@ video {
 
 .w-3\/5 {
   width: 60%;
-}
-
-.w-\[50\%\] {
-  width: 50%;
 }
 
 .w-\[70\%\] {
@@ -649,6 +641,10 @@ video {
   align-self: flex-start;
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -680,11 +676,6 @@ video {
   background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
 }
 
-.bg-orange-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
-}
-
 .bg-orangestyle {
   --tw-bg-opacity: 1;
   background-color: hsl(14 86% 42% / var(--tw-bg-opacity, 1));
@@ -693,6 +684,11 @@ video {
 .bg-red-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
 }
 
 .bg-rose-50 {
@@ -807,6 +803,70 @@ video {
   /* center */
   place-content: center;
   gap: 7px;
+}
+
+.item-cart{
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item-cart__image{
+  width: 100%;
+  height: auto;
+}
+
+.item-cart__button{
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.item-cart__button img{
+  width: 20px;
+  height: 20px;
+}
+
+.item-cart__button-text{
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.item-cart__description{
+  padding: 10px;
+}
+
+.item-cart__category{
+  font-size: 14px;
+  color: #888;
+}
+
+.item-cart__name{
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-cart__price{
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* extra button */
+
+.item-cart__button-quantity{
+  background-color: red;
 }
 
 .hover\:border-rose-500:hover {

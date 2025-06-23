@@ -14,7 +14,7 @@ let listProductOrder = [];
 
 const calculate = () => {
   // Reinicia el total antes de calcular
-  console.log("calculando")
+  console.log("calculando");
   orderTotal = 0;
 
   // Recorre los productos y suma el precio total con la cantidad correspondiente
@@ -36,9 +36,9 @@ const createCart = () => {
   listProductOrder.forEach((product) => {
     const cartItem = document.createElement("div");
     cartItem.classList.add(
-      "bg-red-500",
+      "bg-rose-900",
       "flex",
-      "w-100",
+      "w-full",
       "justify-between",
       "items-center",
       "my-5"
@@ -67,14 +67,14 @@ const createCart = () => {
       if (index !== -1) {
         // Remover del array
         listProductOrder.splice(index, 1);
-        
+
         // Reducir la cantidad total de productos
         orderCantidad -= product.quantity;
         numberProducts.innerHTML = orderCantidad;
 
         // Volver a calcular el precio
         calculate();
-        
+
         // Verificar si el carrito está vacío
         if (listProductOrder.length === 0) {
           listOrder.innerHTML = "";
@@ -105,24 +105,35 @@ fetch("./data.json")
     // Aquí ya tienes el objeto JSON
     data.forEach((product) => {
       const productElement = document.createElement("div");
-      productElement.classList.add("my-4");
+
       productElement.innerHTML = `
-        <img class="rounded-lg" src="${product.image.desktop}" alt="">
-        <button class= "relative top-[-10px] flex px-4 py-1 bg-white rounded-lg gap-2 mx-auto">
-          <img src="assets/images/icon-add-to-cart.svg" alt="">
-          <p class="font-medium">Add to cart</p>
-        </button>
-        <div class="w-full">
-          <p class="text-rose-300">${product.category}</p>
-          <p class="font-semibold">${product.name}</p>
-          <p class="text-orangestyle font-[700]">
-            $${product.price}
-          </p>
+      <div class="item-cart">
+        <div class="item-cart__image-container">
+          <img class="item-cart__image" src="${product.image.desktop}" alt="">
+
+          <div>
+            <div class="item-cart__button-main">
+              <img src="assets/images/icon-add-to-cart.svg" alt="">
+              <p class="item-cart__button-text">Add to cart</p>
+            </div>
+            <div class="item-cart__button-quantity">
+              <button class="item-cart__minus">-</button>
+              <p class="item-cart__quantity">12</p>
+              <button class="item-cart__plus">+</button>
+            </div>
+          </div>
         </div>
+
+        <div class="item-cart__description">
+          <p class="item-cart__category">${product.category}</p>
+          <p class="item-cart__name">${product.name}</p>
+          <p class="item-cart__price">$${product.price.toFixed(2)}</p>
+        </div>
+      </div>
       `;
 
-      const button = productElement.querySelector("button");
-      button.addEventListener("click", () => {
+      const button = productElement.querySelector(".item-cart__button");
+      button?.addEventListener("click", () => {
         const existingProduct = listProductOrder.find(
           (p) => p.name === product.name
         );
