@@ -77,25 +77,44 @@
         </div> -->
         </div>
 
-        <div id="calculatePrice" class="hidden">
+        <hr>
+        <div id="calculatePrice" class="hidden order-total">
           <div class="flex justify-between items-center">
-            <p class="text-rose-900">Total</p>
+            <p class="text-rose-900">Order Total</p>
             <p id="price" class="text-rose-500 text-[30px] font-[700]">$</p>
           </div>
 
-          <div class="bg-rose-50 text-[12px] flex justify-center p-5">
+          <div class="delivery">
             <img src="assets/images/icon-carbon-neutral.svg" alt="" />
             <p>This is a <b>carbon-neutral</b> delivery</p>
           </div>
 
           <button
+            id="confirm-order"
             class="bg-orangestyle w-full text-rose-50 cursor-pointer rounded-3xl p-3"
           >
             Confirm Order
           </button>
         </div>
       </section>
+
     </div>
+
+    <section id="order-confirmation" class="order-confirmation">
+      <div class="order-confirmation__content">
+        <img src="assets/images/icon-order-confirmed.svg" alt="" />
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food </p>
+        <div id="order-list-confirmation">
+          
+          <p>Total</p>
+        </div>
+  
+        <butto class="order-confirmation__button">Start New Order</button>
+
+      </div>
+
+    </section>
 
     <div class="attribution">
       Challenge by
