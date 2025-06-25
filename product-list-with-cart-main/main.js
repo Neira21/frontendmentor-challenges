@@ -11,6 +11,7 @@ const confirmOrder = document.querySelector("#confirm-order");
 
 const modalConfirmation = document.querySelector("#order-confirmation");
 const confirmOrderButton = document.querySelector(".order-confirmation__button");
+const ordenListConfirmation = document.querySelector("#confirmed-list-products");
 
 let orderCantidad = 0;
 let orderTotal = 0;
@@ -37,7 +38,6 @@ const createCart = () => {
   listProductOrder.forEach((product) => {
     const cartItem = document.createElement("div");
     cartItem.classList.add(
-      "bg-rose-900",
       "flex",
       "w-full",
       "justify-between",
@@ -253,15 +253,41 @@ fetch("./data.json")
 
 
 confirmOrder.addEventListener("click", () => {
+  document.body.classList.add('modal-open');
+
+  // hacer el el view suba hasta el top
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
   if (listProductOrder.length > 0) {
     modalConfirmation.style.display = "flex";
-    console.log("Confirming order");
-    console.log("Order details:", listProductOrder);
+    //console.log("Order details:", listProductOrder);
 
     listProductOrder.forEach((product) => {
-      console.log(
-        `Product: ${product.name}, Quantity: ${product.quantity}, Price: $${product.price.toFixed(2)}`
-      );
+
+      const ordenItem =document.createElement("div");
+      ordenItem.classList.add("order-list");
+
+      ordenItem.innerHTML = `
+            <div class="order-list__image">
+              <img src=${product.image.desktop} />
+            </div>
+            <div class="order-list__description">
+              <p>${product.name}}</p>
+              <p>x${product.quantity}</p>
+              <p>$${product.price}</p>
+            </div>
+            <div class="order-list__subtotal">
+              <p>${(product.price * product.quantity).toFixed(2)}</p>
+            </div>
+      `;
+      const price = document.querySelector("#priceOrder");
+      price.innerHTML = `$${orderTotal.toFixed(2)}`; // Asegúrate de mostrar con dos decimales
+      ordenListConfirmation.appendChild(ordenItem);
+
+
     });
 
     
@@ -270,5 +296,40 @@ confirmOrder.addEventListener("click", () => {
 
 
 confirmOrderButton.addEventListener("click", () => {
+  // Ocultar el modal
   modalConfirmation.style.display = "none";
+  document.body.classList.remove('modal-open');
+
+  // Reiniciar datos
+  listProductOrder = [];
+  orderCantidad = 0;
+  orderTotal = 0;
+
+  // Limpiar visualización del carrito
+  listOrder.innerHTML = "";
+  numberProducts.textContent = "0";
+  calculatePrice.style.display = "none";
+  listempty.style.display = "flex";
+
+  // Limpiar lista de orden confirmada
+  ordenListConfirmation.innerHTML = "";
+
+  // Restaurar los productos: mostrar botón principal y ocultar cantidad
+  const allItems = document.querySelectorAll(".item-cart");
+  allItems.forEach((item) => {
+    const buttonMain = item.querySelector(".item-cart__button-main");
+    const quantityWrapper = item.querySelector(".item-cart__button-quantity");
+    const image = item.querySelector(".item-cart__image");
+
+    if (buttonMain && quantityWrapper) {
+      buttonMain.style.display = "flex";
+      quantityWrapper.style.display = "none";
+    }
+
+    if (image) {
+      image.classList.remove("item-cart__image--selected");
+    }
+  });
 });
+
+
