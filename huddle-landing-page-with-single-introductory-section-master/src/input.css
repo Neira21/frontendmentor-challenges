@@ -41,7 +41,7 @@
   .bg-mobile {
     
     background-image: url('../assets/images/bg-desktop.svg');
-    background-size: contain;
+    background-size: auto;
     background-repeat: no-repeat;
     
   }
