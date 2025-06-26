@@ -1,33 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  Build The Community Your Fans Will Love
+    <title>
+      Frontend Mentor | Huddle landing page with single introductory section
+    </title>
 
-  Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
-  Create connections with your users as you engage in genuine discussion. 
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-violet bg-mobile grid place-content-center">
 
-  Register
+    <section class="w-[304px] my-[38px] lg:w-[1100px] lg:my-10">
+      <img class="w-[120px] mb-[70px] lg:w-[200px]" src="assets/images/logo.svg" alt="" />
+      <div class="lg:flex lg:gap-10  ">
+        <div class="mb-[60px]">
+          <img class="" src="assets/images/illustration-mockups.svg" alt="mockup" />
+        </div>
+          
+        <div class="text-white text-center lg:mt-5">
+          <h1 class="text-2lg mb-4 font-poppins font-semibold lg:text-4lg lg:text-left lg:w-[480px] lg:mx-auto lg:leading-[1.5] ">Build The Community Your Fans Will Love</h1>
 
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+          <p class="mb-6 lg:w-[480px] lg:text-left lg:text-base lg:leading-[1.4] ">
+            Huddle re-imagines the way we build communities. You have a voice, but
+            so does your audience. Create connections with your users as you
+            engage in genuine discussion.
+          </p>
+          <div class="lg:flex lg:justify-start">
+            <button class="bg-white w-60 text-violet px-10 py-3 rounded-full font-poppins font-semibold cursor-pointer hover:bg-soft-magenta hover:text-white transition-all duration-300 shadow-lg lg:w-48" >Register</button>  
+          </div>
+
+
+          <div class="flex flex-1 justify-center lg:justify-end  ">
+
+            <ul class="flex place-content-center gap-4 mt-16 lg:mt-32 lg: mr-12 ">
+              <li class="">
+                <a class="block border-2 border-white size-7 rounded-full hover:text-soft-magenta hover:border-soft-magenta transition-all duration-300" href="#">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="">
+                <a class="block border-2 border-white size-7 rounded-full hover:text-soft-magenta hover:border-soft-magenta transition-all duration-300" href="#">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+              <li class="">
+                <a class="block border-2 border-white size-7 rounded-full hover:text-soft-magenta hover:border-soft-magenta transition-all duration-300" href="#">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+          
+      </div>
+      
+    </section>
+
+    
+  </body>
 </html>
