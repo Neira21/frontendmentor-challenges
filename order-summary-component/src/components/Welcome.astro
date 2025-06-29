@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+---
+
+<div class="min-h-screen bg-pale-blue flex items-center justify-center p-4 text-[16px] font-red-hat">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-sm overflow-hidden">
+    <!-- Hero Image -->
+    
+      <img 
+        src="/illustration-hero.svg" 
+        alt="illustration-hero" 
+      />
+    
+
+    <!-- Content Section -->
+    <div class="p-8 text-center">
+      <h1 class="text-2xl text-dark-blue mb-4 font-black">
+        Order Summary
+      </h1>
+      
+      <p class="text-desaturated-blue mb-6 leading-relaxed w-[260px] mx-auto md:w-[300px]">
+        You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+      </p>
+
+      <!-- Plan Selection -->
+      <div class="bg-very-pale-blue rounded-xl p-4 mb-6 flex items-center justify-between">
+        <div class="flex items-center gap-4 ">
+          <div class="w-12 h-12 bg-bright-blue rounded-full flex items-center justify-center">
+            <img src="/icon-music.svg" alt="icon-music" class="w-20 ">
+          </div>
+          <div class="text-left">
+            <h3 class="font-black text-dark-blue">Annual Plan</h3>
+            <p class="text-desaturated-blue">$59.99/year</p>
+          </div>
+        </div>
+        <button class="text-bright-blue hover:text-bright-blue/70 underline font-bold text-sm">
+          Change
+        </button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-3">
+        <button class="w-full bg-bright-blue text-white font-black py-4 px-6 rounded-xl shadow-lg transition-colors cursor-pointer hover:bg-bright-blue/65">
+          Proceed to Payment
+        </button>
+        
+        <button class="w-full text-desaturated-blue hover:text-dark-blue font-black py-4 px-6 transition-colors cursor-pointer">
+          Cancel Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
