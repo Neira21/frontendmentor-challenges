@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+body{
+  background-color: var(--color-grey-100);
+}
+
+@layer components {
+  .grid-areas-layout {
+    display: grid;
+    grid-template-areas:
+      "A"
+      "B"
+      "D"
+      "E"
+      "C";
+
+    grid-template-columns: 1fr;
+    
+    gap: 2rem;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    height: 100vh;
+    max-width: 1440px;
+    max-height: 800px;
+  }
+
+  .area-A {
+    grid-area: A;
+    
+  }
+  .area-B {
+    grid-area: B;
+  }
+  .area-C {
+    grid-area: C;
+  }
+  .area-D {
+    grid-area: D;
+  }
+  .area-E {
+    grid-area: E;
+  }
+
+  .box-custom {
+    box-shadow: 40px 40px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .grid-areas-layout {
+      display: grid;
+      grid-template-areas:
+        "A A B C"
+        "D E E C";
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      margin: auto;
+      
+      
+      
+    }
+  }
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../assets/fonts/BarlowSemiCondensed-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../assets/fonts/BarlowSemiCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Primary */
+  --color-purple-50: hsl(260, 100%, 95%);
+  --color-purple-300: hsl(264, 82%, 80%);
+  --color-apurple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-100: hsl(214, 17%, 92%);
+  --color-grey-200: hsl(0, 0%, 81%);
+  --color-grey-400: hsl(224, 10%, 45%);
+  --color-grey-500: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(219, 29%, 14%);
+  --color-black: hsl(0, 0%, 7%);
+
+  /* Font */
+  --font-barlow-semi-condensed: "Barlow Semi Condensed", sans-serif;
+
+  /* Font Size */
+  --text-base: 13px;
+
+}
