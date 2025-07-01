@@ -1,0 +1,57 @@
+---
+import navbarOptions from "@/navbaroptions/navbaroptions";
+---
+
+
+
+
+
+<footer class="bg-black text-white py-16 block font-alata ">
+  <div class="flex flex-col items-center gap-5 ">
+
+    <!-- imagen -->
+    <div><img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" /></div>
+
+    <!-- navegación -->
+    <div class="mt-4">
+      <ul class="flex flex-col items-center gap-4 text-[15px]">
+        {navbarOptions.map(({name, href}) => (
+          <li>
+            <a href="*" class="hover:underline">{name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- iconos sociales -->
+    <div class="mt-8">
+      <ul class="flex gap-5">
+        <li>
+          <a href="*">
+            <img src="/images/icon-facebook.svg" alt="Facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="*">
+            <img src="/images/icon-twitter.svg" alt="Twitter" />
+          </a>
+        </li>
+        <li>
+          <a href="*">
+            <img src="/images/icon-pinterest.svg" alt="Pinterest" />
+          </a>
+        </li>
+        <li>
+          <a href="*">
+            <img src="/images/icon-instagram.svg" alt="Instagram" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- derechos -->
+    <div class="text-grey-500">
+      <p>© 2021 Loopstudios. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

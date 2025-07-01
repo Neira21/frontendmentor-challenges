@@ -1,9 +1,19 @@
 ---
-import Header from "./Header.astro";
+import Header from "@/components/Header.astro";
 ---
 
 
-<section class="min-h-screen bg-image-welcome">
+<section class="relative min-h-screen bg-image-welcome">
   <Header />
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="border border-white px-8 py-5 mx-4 text-center max-w-xs">
+      <!-- sin interlineado -->
+      <h2 class="text-white text-4xl text-left uppercase leading-none">
+        Immersive experiences that deliver
+      </h2>
+    </div>
+  </div>
+
   
 </section>
+
