@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Alata";
+  src: url("./assets/fonts/Alata/Alata-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("./assets/fonts/Josefin_Sans/static/JosefinSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-200: hsl(0, 0%, 85%);
+
+  --font-alata: "Alata", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+
+  --bg-image-welcome: url("./images/mobile/image-hero.jpg");
+
+}
+
+@layer components {
+  .bg-image-welcome {
+    background-image: url("./images/mobile/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
