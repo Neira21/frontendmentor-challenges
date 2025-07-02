@@ -42,19 +42,20 @@ const creations = [
       OUR CREATIONS
     </h2>
 
-    <div class="flex flex-col gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {creations.map((creation) => (
-        <div class="relative w-full overflow-hidden rounded-md">
+        <div class="relative">
           <img
             src={creation.image}
             alt={creation.title}
-            class="w-full h-full object-cover"
+            class=""
           />
            {/* Overlay con degradado oscuro */}
-           <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
+          <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-1" />
 
+          {/* titulo */}
           <div class="absolute bottom-4 left-6">
-            <h3 class="relative text-gray-200 text-2xl w-[140px] leading-7 z-20 ">
+            <h3 class="relative text-white text-2xl w-[140px] leading-7 z-11 ">
               {creation.title}
             </h3>
           </div>
@@ -62,7 +63,7 @@ const creations = [
       ))}
     </div>
 
-    <button class="text-center font-alata tracking-[4px]  mx-auto block border-3 border-black text-black py-1 px-8 text-[12px] mt-7 hover:bg-black hover:text-white cursor-pointer">
+    <button class="text-center font-alata tracking-[4px]  mx-auto block border-1 border-black text-black py-1 px-8 text-[12px] mt-7 hover:bg-black hover:text-white cursor-pointer">
       SEE ALL
     </button>
   </div>

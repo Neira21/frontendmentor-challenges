@@ -38,4 +38,13 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  @media (min-width: 1280px) {
+    .bg-image-welcome {
+      background-image: url("./images/desktop/image-hero.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
 }

@@ -1,70 +1,87 @@
 ---
-import Navbar from "@/components/Navbar.astro";
-
+import navbarOptions from "@/navbaroptions/navbaroptions";
 
 /* only mobile show navbar */
-
-
 ---
 
-<section class="pt-6 relative">
-    <div class="flex items-center justify-between px-6">
-      <div class="flex items-center h-16">
-        <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" />
-      </div>
-      <div>
-        <img src="/images/icon-hamburger.svg" alt="Menu" class="h-5 w-auto" />
-      </div>
+<section class="pt-6 absolute inset-0 z-20 xl:mx-24 h-fit  ">
+  <!-- header bar -->
+  <div class="flex items-center justify-between px-6">
+    <div class="flex items-center h-16">
+      <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto xl:h-8" />
     </div>
-  
+    <button id="openMenu" class="xl:hidden">
+      <img
+        src="/images/icon-hamburger.svg"
+        alt="Menu"
+        class="h-5 w-auto cursor-pointer"
+      />
+    </button>
+    <!-- Desktop navbar options -->
+    <ul
+      class="text-2xl uppercase my-auto ml-8 text-gray-200 hidden xl:flex xl:justify-center xl:items-center xl:gap-10 xl:text-xs xl:font-semibold "
+    >
+      {
+        navbarOptions.map(({ name, href }) => (
+          <li>
+            <a
+              href="#"
+              class="relative inline-block after:block after:mx-auto after:mt-1 after:h-[2px] after:w-4 after:bg-white after:opacity-0 hover:after:opacity-100 after:transition-all"
+            >
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 
-
-
-<!-- 
-
-
-
- 
-<section class="pt-6 relative">
-   Header top bar
-  <div class="flex items-center justify-between px-6 z-10 relative">
-    <div class="flex items-center h-16">
-      <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" />
-    </div>
-    <button id="openMenu">
-      <img src="/images/icon-hamburger.svg" alt="Menu" class="h-5 w-auto" />
+<!-- fullscreen navbar overlay -->
+<nav
+  id="mobileNav"
+  class="fixed inset-0 pt-1 bg-black text-white z-50 flex-col hidden"
+>
+  <div class="flex items-center justify-between px-6 mt-10">
+    <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" />
+    <button id="closeMenu" class="">
+      <img
+        src="/images/icon-close.svg"
+        alt="Close"
+        class="h-5 w-auto cursor-pointer"
+      />
     </button>
   </div>
+  <!-- Mobile navbar options -->
+  <ul class="text-2xl uppercase space-y-6 my-auto ml-8 text-gray-200">
+    {
+      navbarOptions.map(({ name, href }) => (
+        <li>
+          {/* underline size 5px */}
+          <a
+            href="#"
+            class="hover:underline hover:underline-offset-4 hover:decoration-[2px] decoration-white"
+          >
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
 
-  Fullscreen navbar overlay
-  <nav
-    id="mobileNav"
-    class="fixed inset-0 bg-black text-white z-50 hidden flex-col justify-center items-center"
-  >
-    <button id="closeMenu" class="absolute top-6 right-6">
-      <img src="/images/icon-close.svg" alt="Close" class="h-5 w-auto" />
-    </button>
+<script is:inline>
+  const openBtn = document.getElementById("openMenu");
+  const closeBtn = document.getElementById("closeMenu");
+  const nav = document.getElementById("mobileNav");
 
-    <ul class="text-2xl uppercase space-y-6">
-      {navbarOptions.map(({ name, href }) => (
-        <li><a href={href} class="hover:underline">{name}</a></li>
-      ))}
-    </ul>
-  </nav>
+  openBtn?.addEventListener("click", () => {
+    nav.classList.remove("hidden");
+    nav.classList.add("flex");
+  });
 
-  <script is:inline>
-    const openBtn = document.getElementById('openMenu')
-    const closeBtn = document.getElementById('closeMenu')
-    const nav = document.getElementById('mobileNav')
-
-    openBtn?.addEventListener('click', () => {
-      nav.classList.remove('hidden')
-    })
-
-    closeBtn?.addEventListener('click', () => {
-      nav.classList.add('hidden')
-    })
-  </script>
-</section>
--->
+  closeBtn?.addEventListener("click", () => {
+    nav.classList.add("hidden");
+    nav.classList.remove("flex");
+  });
+</script>
