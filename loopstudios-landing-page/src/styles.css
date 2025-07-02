@@ -34,14 +34,14 @@
 
 @layer components {
   .bg-image-welcome {
-    background-image: url("./images/mobile/image-hero.jpg");
+    background-image: url("/images/mobile/image-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     .bg-image-welcome {
-      background-image: url("./images/desktop/image-hero.jpg");
+      background-image: url("/images/desktop/image-hero.jpg");
       background-size: cover;
       background-repeat: no-repeat;
     }

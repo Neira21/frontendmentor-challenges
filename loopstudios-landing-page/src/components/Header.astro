@@ -4,13 +4,13 @@ import navbarOptions from "@/navbaroptions/navbaroptions";
 /* only mobile show navbar */
 ---
 
-<section class="pt-6 absolute inset-0 z-20 xl:mx-24 h-fit  ">
+<section class="pt-6 absolute inset-0 z-20 lg:mx-24 h-fit  ">
   <!-- header bar -->
   <div class="flex items-center justify-between px-6">
     <div class="flex items-center h-16">
-      <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto xl:h-8" />
+      <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto lg:h-8" />
     </div>
-    <button id="openMenu" class="xl:hidden">
+    <button id="openMenu" class="lg:hidden">
       <img
         src="/images/icon-hamburger.svg"
         alt="Menu"
@@ -19,7 +19,7 @@ import navbarOptions from "@/navbaroptions/navbaroptions";
     </button>
     <!-- Desktop navbar options -->
     <ul
-      class="text-2xl uppercase my-auto ml-8 text-gray-200 hidden xl:flex xl:justify-center xl:items-center xl:gap-10 xl:text-xs xl:font-semibold "
+        class="text-2xl uppercase my-auto ml-8 text-gray-200 hidden lg:flex lg:justify-center lg:items-center lg:gap-10 lg:text-xs lg:font-semibold "
     >
       {
         navbarOptions.map(({ name, href }) => (
