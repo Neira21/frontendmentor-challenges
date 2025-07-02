@@ -2,71 +2,97 @@
 const creations = [
   {
     title: "DEEP EARTH",
-    image: "/images/mobile/image-deep-earth.jpg",
+    imageMobile: "/images/mobile/image-deep-earth.jpg",
+    imageDesktop: "/images/desktop/image-deep-earth.jpg",
   },
   {
     title: "NIGHT ARCADE",
-    image: "/images/mobile/image-night-arcade.jpg",
+    imageMobile: "/images/mobile/image-night-arcade.jpg",
+    imageDesktop: "/images/desktop/image-night-arcade.jpg",
   },
   {
     title: "SOCCER TEAM VR",
-    image: "/images/mobile/image-soccer-team.jpg",
+    imageMobile: "/images/mobile/image-soccer-team.jpg",
+    imageDesktop: "/images/desktop/image-soccer-team.jpg",
   },
   {
     title: "THE GRID",
-    image: "/images/mobile/image-grid.jpg",
+    imageMobile: "/images/mobile/image-grid.jpg",
+    imageDesktop: "/images/desktop/image-grid.jpg",
   },
   {
     title: "FROM UP ABOVE VR",
-    image: "/images/mobile/image-from-above.jpg",
+    imageMobile: "/images/mobile/image-from-above.jpg",
+    imageDesktop: "/images/desktop/image-from-above.jpg",
   },
   {
     title: "POCKET BOREALIS",
-    image: "/images/mobile/image-pocket-borealis.jpg",
+    imageMobile: "/images/mobile/image-pocket-borealis.jpg",
+    imageDesktop: "/images/desktop/image-pocket-borealis.jpg",
   },
   {
     title: "THE CURIOSITY",
-    image: "/images/mobile/image-curiosity.jpg",
+    imageMobile: "/images/mobile/image-curiosity.jpg",
+    imageDesktop: "/images/desktop/image-curiosity.jpg",
   },
   {
     title: "MAKE IT FISHEYE",
-    image: "/images/mobile/image-fisheye.jpg",
+    imageMobile: "/images/mobile/image-fisheye.jpg",
+    imageDesktop: "/images/desktop/image-fisheye.jpg",
   },
 ];
 ---
 
+<section class="flex justify-center items-center lg:max-w-[1300px] lg:mx-auto lg:mt-20 lg:mb-32 lg:px-10 md:mb-20 mb-10">
+  <div class="container">
+    <div class="lg:flex lg:justify-between lg:items-center lg:py-8 ">
 
-<section class="bg-white">
-  <div class="container px-4 py-8">
-    <h2 class="text-3xl text-center font-josefin tracking-[2px] mb-8">
-      OUR CREATIONS
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {creations.map((creation) => (
-        <div class="relative">
-          <img
-            src={creation.image}
-            alt={creation.title}
-            class=""
-          />
-           {/* Overlay con degradado oscuro */}
-          <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-1" />
-
-          {/* titulo */}
-          <div class="absolute bottom-4 left-6">
-            <h3 class="relative text-white text-2xl w-[140px] leading-7 z-11 ">
-              {creation.title}
-            </h3>
-          </div>
-        </div>
-      ))}
+      <h2 class="text-3xl text-center font-josefin tracking-[2px] lg:mb-10 mb-8 lg:text-left lg:text-5xl ">
+        OUR CREATIONS
+      </h2>
+      <button
+        class="hidden lg:block text-center font-alata tracking-[4px] mx-auto lg:mx-0 border-1 border-black text-black py-1 px-8 text-[12px] lg:mt-0 mt-7 hover:bg-black hover:text-white cursor-pointer lg:mb-10"
+      >
+        SEE ALL
+      </button>
     </div>
 
-    <button class="text-center font-alata tracking-[4px]  mx-auto block border-1 border-black text-black py-1 px-8 text-[12px] mt-7 hover:bg-black hover:text-white cursor-pointer">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+    >
+      {
+        creations.map((creation) => (
+          <div class="relative mx-auto">
+            <picture>
+              <source
+                srcset={creation.imageDesktop}
+                media="(min-width: 1024px)"
+              />
+              <img
+                src={creation.imageMobile}
+                alt={creation.title}
+                class=" lg:h-[580px] lg:w-auto w-[320px] mx-auto object-cover"
+              />
+              
+            </picture>
+            {/* Overlay con degradado oscuro */}
+            <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-1 hover:bg-white/50 cursor-pointer " />
+
+            {/* titulo */}
+            <div class="absolute z-0 bottom-4 left-6 lg:bottom-10 lg:w-full lg:left-0 ">
+              <h3 class="relative text-white text-2xl w-[140px] leading-7 lg:leading-10 z-11 lg:text-4xl lg:w-[180px] lg:text-left lg:mx-10  ">
+                {creation.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <button
+      class="text-center font-alata tracking-[4px] mx-auto block border-1 border-black text-black py-1 px-8 text-[12px] mt-7 hover:bg-black hover:text-white cursor-pointer lg:hidden"
+    >
       SEE ALL
     </button>
   </div>
-
-
 </section>

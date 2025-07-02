@@ -2,20 +2,21 @@
 import navbarOptions from "@/navbaroptions/navbaroptions";
 ---
 
-<footer class="bg-black text-white py-16 block font-alata">
-  <div class="flex flex-col items-center gap-5">
+<footer class="bg-black lg:mt-28 text-white py-16 block font-alata lg:px-48 lg:mx-auto">
+  <div class="flex flex-col items-center gap-5 lg:grid lg:grid-cols-2 ">
     <!-- imagen -->
-    <div>
+    <div class="lg:order-1" >
       <img src="/images/logo.svg" alt="Loopstudios" class="h-6 w-auto" />
     </div>
+    
 
     <!-- navegación -->
-    <div class="mt-4">
-      <ul class="flex flex-col items-center gap-4 text-[15px]">
+    <div class="mt-4 lg:order-3">
+      <ul class="flex flex-col items-center gap-4 text-[15px]  lg:flex-row lg:gap-6">
         {
           navbarOptions.map(({ name, href }) => (
             <li>
-              <a href="*" class="hover:underline">
+              <a href="#" class="hover:underline">
                 {name}
               </a>
             </li>
@@ -25,25 +26,25 @@ import navbarOptions from "@/navbaroptions/navbaroptions";
     </div>
 
     <!-- iconos sociales -->
-    <div class="mt-8">
+    <div class="mt-8 lg:order-2 lg:flex lg:justify-end">
       <ul class="flex gap-5">
         <li>
-          <a href="*">
+          <a href="#">
             <img src="/images/icon-facebook.svg" alt="Facebook" />
           </a>
         </li>
         <li>
-          <a href="*">
+          <a href="#">
             <img src="/images/icon-twitter.svg" alt="Twitter" />
           </a>
         </li>
         <li>
-          <a href="*">
+          <a href="#">
             <img src="/images/icon-pinterest.svg" alt="Pinterest" />
           </a>
         </li>
         <li>
-          <a href="*">
+          <a href="#">
             <img src="/images/icon-instagram.svg" alt="Instagram" />
           </a>
         </li>
@@ -51,8 +52,8 @@ import navbarOptions from "@/navbaroptions/navbaroptions";
     </div>
 
     <!-- derechos -->
-    <div class="text-grey-500">
-      <p>© 2021 Loopstudios. All rights reserved.</p>
+    <div class="text-grey-500 lg:order-4 lg:flex lg:justify-end lg:mt-4">
+      <p>© 2025 Loopstudios. All rights reserved.</p>
     </div>
   </div>
 </footer>
