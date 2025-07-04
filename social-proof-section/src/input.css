@@ -41,3 +41,10 @@
   --font-size-15: 15px;
   
 }
+
+
+@layer components{
+  html{
+    font-size: var(--font-size-15);
+  }
+}
