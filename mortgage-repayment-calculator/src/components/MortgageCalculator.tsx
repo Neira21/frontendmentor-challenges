@@ -4,8 +4,8 @@ const MortgageCalculator = () => {
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   return (
-    <div className="w-full  bg-white p-6 rounded-t-3xl md:rounded-3xl">
-      <div className="flex flex-col gap-2  mb-6">
+    <div className="w-full bg-white p-8 md:w-1/2 md:rounded-l-3xl">
+      <div className="flex flex-col gap-2 mb-6 md:flex-row md:justify-between">
         <h1 className="text-slate-900 text-2xl font-bold">
           Mortgage Calculator
         </h1>

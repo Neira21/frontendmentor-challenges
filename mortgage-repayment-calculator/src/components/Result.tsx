@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 
-const Result = (props: Props) => {
-  const [result, setResult] = useState(true);
+const Result = () => {
+  const [result, ] = useState(true);
 
   return (
-    <>
-      {result ? (
-        <div className=" flex flex-col items-center gap-3 justify-center bg-slate-900 p-6 text-center ">
+    <div className={`w-full bg-slate-900 p-8 text-white md:w-1/2 md:rounded-r-3xl md:rounded-bl-[60px] md:flex md:flex-col ${
+      !result ? 'md:justify-center' : 'md:items-center'
+    }`}>
+      {!result ? (
+        <div className="w-full flex flex-col items-center gap-3 justify-center text-center  ">
           <img src="/illustration-empty.svg" alt="calculator icon" />
           <h2 className="text-slate-100 text-lg font-bold mt-4">
             Results shown here
@@ -18,7 +20,7 @@ const Result = (props: Props) => {
           </p>
         </div>
       ) : (
-        <div className="bg-slate-900 p-8 text-white">
+        <div className="w-full">
           <h2 className="text-2xl mb-4 font-bold">Your results</h2>
           <p className="text-slate-300 mb-6">
             Your results are shown below based on the information you provided. To
@@ -42,7 +44,7 @@ const Result = (props: Props) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

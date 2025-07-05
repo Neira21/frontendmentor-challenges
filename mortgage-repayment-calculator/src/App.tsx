@@ -20,12 +20,12 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen max-w-[1000px] mx-auto">
-      <div className="flex flex-col items-center justify-center h-min-screen md:flex-row   my-auto">
+    <main className="grid min-h-screen place-items-center bg-slate-100">
+      <div className="w-full max-w-[950px] flex flex-col shadow-lg md:flex-row">
         <MortgageCalculator />
         <Result />
       </div>
-    </div>
+    </main>
   );
 }
 
