@@ -1,12 +1,14 @@
-import { useState } from "react";
+type Props = {
+  result: {
+    monthlyPayment: number;
+    totalPayment: number;
+  } | null
+}
 
-
-const Result = () => {
-  const [result, ] = useState(true);
-
+const Result = ( {result} : Props) => {
   return (
-    <div className={`w-full bg-slate-900 p-8 text-white md:w-1/2 md:rounded-r-3xl md:rounded-bl-[60px] md:flex md:flex-col ${
-      !result ? 'md:justify-center' : 'md:items-center'
+    <div className={`w-full bg-slate-900 p-8 text-white md:rounded-r-3xl md:rounded-bl-[60px] md:flex md:flex-col ${
+      !result  ? 'md:justify-center' : 'md:items-center'
     }`}>
       {!result ? (
         <div className="w-full flex flex-col items-center gap-3 justify-center text-center  ">
@@ -31,14 +33,14 @@ const Result = () => {
             <div className="space-y-6">
               <div className="flex flex-col gap-2">
                 <p className="text-slate-300 text-sm">Your monthly repayments</p>
-                <p className="text-lime text-5xl font-bold">£1,797.75</p>
+                <p className="text-lime text-5xl font-bold">£{result.monthlyPayment}</p>
               </div>
               <hr className="border-slate-700" />
               <div className="flex flex-col gap-2">
                 <p className="text-slate-300 text-sm">
                   Total you'll repay over the term
                 </p>
-                <p className="text-white text-2xl font-bold">£539,325.00</p>
+                <p className="text-white text-2xl font-bold">£{result.totalPayment}</p>
               </div>
             </div>
           </div>
