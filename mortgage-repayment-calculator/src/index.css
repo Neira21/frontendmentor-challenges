@@ -23,6 +23,8 @@
 @layer base {
   html {
     font-family: var(--font-plus-jakarta-sans);
+    font-size: 16px;
+    background-color: var(--color-slate-100);
   }
 
   p,label{
