@@ -1,24 +1,18 @@
-<header class="text-white px-6 py-4 w-full">
-  <nav class="flex justify-between items-center bg-red-400">
-
+<header class="flex justify-between items-center text-white px-6 py-4 w-full">
+  <div>
     <img src="/assets/shared/logo.svg" alt="Space Tourism Logo" >
+  </div>
 
-    <button class="md:hidden text-white focus:outline-none">
-      <img src="/assets/shared/icon-hamburger.svg" alt="Menu" class="h-6">
-    </button>
+  <button class="md:hidden" (click)="toogleNavbar()">
+    <img src="/assets/shared/icon-hamburger.svg" alt="Menu" class="h-6">
+  </button>
 
+  <app-navbar class="hidden md:flex md:gap-3"></app-navbar>
 
-    @if(isActive) {
-      <button class="md:hidden text-white focus:outline-none" (click)="toggleActive()">
-        <img src="/assets/shared/icon-close.svg" alt="Close Menu" class="h-6">
-      </button>
-    }
-    <ul class="hidden flex space-x-6 text-white">
-      <a router="/home" routerLinkActive="underline">Home</a>
-      <a router="/destination" routerLinkActive="underline">Destination</a>
-      <a router="/crew" routerLinkActive="underline">Crew</a>
-      <a router="/technology" routerLinkActive="underline">Technology</a>
-    </ul>
-
-  </nav>
 </header>
+
+<!-- Navbar móvil -->
+@if(isNavbarOpenMobile){
+  <app-navbar class="md:hidden"></app-navbar>
+
+}
