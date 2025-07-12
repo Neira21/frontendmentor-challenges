@@ -1,24 +1,30 @@
-<nav>
-  <ul class="flex flex-col md:flex-row gap-4 md:gap-8 text-lg uppercase tracking-widest">
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/destination">Destination</a></li>
-    <li><a routerLink="/crew">Crew</a></li>
-    <li><a routerLink="/technology">Technology</a></li>
+<nav class="absolute top-0 right-0 z-20 min-h-[100%] w-[75%] bg-bluedark/20 backdrop-blur-lg md:hidden"
+>
 
+  <div class="flex justify-end  items-center p-6" (click)="closeNavbar.emit()">
+    <img src="./assets/shared/icon-close.svg" alt="">
+  </div>
+  <ul class="flex flex-col md:flex-row gap-4  uppercase p-10 font-barlow-condensed">
+    <li><a routerLink="/"> <span>00</span> Home</a></li>
+    <li><a routerLink="/destination"><span>01</span> Destination</a></li>
+    <li><a routerLink="/crew"><span>02</span> Crew</a></li>
+    <li><a routerLink="/technology"><span>03</span> Technology</a></li>
   </ul>
 </nav>
 
 
 <style>
-  ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  }
-  a {
+
+  a{
     text-decoration: none;
     color: white;
     cursor: pointer;
+    letter-spacing: 4px;
+
+  }
+  span{
+    font-weight: 700;;
+
   }
   a:hover {
     text-decoration: underline;

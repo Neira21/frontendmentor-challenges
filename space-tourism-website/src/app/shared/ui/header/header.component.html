@@ -13,6 +13,6 @@
 
 <!-- Navbar móvil -->
 @if(isNavbarOpenMobile){
-  <app-navbar class="md:hidden"></app-navbar>
+  <app-navbar class="md:hidden" [isOpen]="true" (closeNavbar)="toogleNavbar()"></app-navbar>
 
 }
