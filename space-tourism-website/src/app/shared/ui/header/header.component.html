@@ -1,18 +1,21 @@
 <header class="flex justify-between items-center text-white px-6 py-4 w-full">
-  <div>
-    <img src="/assets/shared/logo.svg" alt="Space Tourism Logo" >
+  <div class="cursor-pointer  md:p-3" routerLink="/home">
+    <img src="/assets/shared/logo.svg" alt="Space Tourism Logo" />
   </div>
 
-  <button class="md:hidden" (click)="toogleNavbar()">
-    <img src="/assets/shared/icon-hamburger.svg" alt="Menu" class="h-6">
+  <button class="cursor-pointer md:hidden" (click)="toogleNavbar()">
+    <img src="/assets/shared/icon-hamburger.svg" alt="Menu" class="h-6" />
   </button>
 
   <app-navbar class="hidden md:flex md:gap-3"></app-navbar>
-
 </header>
 
 <!-- Navbar móvil -->
 @if(isNavbarOpenMobile){
-  <app-navbar class="md:hidden" [isOpen]="true" (closeNavbar)="toogleNavbar()"></app-navbar>
+<app-navbar
+  class="md:hidden fixed z-50 h-screen inset-0"
+  [isOpen]="true"
+  (closeNavbar)="toogleNavbar()"
+></app-navbar>
 
 }

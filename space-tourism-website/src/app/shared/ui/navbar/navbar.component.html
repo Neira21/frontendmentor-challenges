@@ -1,14 +1,15 @@
-<nav class="absolute top-0 right-0 z-20 min-h-[100%] w-[75%] bg-bluedark/20 backdrop-blur-lg md:hidden"
+<nav class="absolute top-0 right-0 z-20 min-h-[100%] w-[65%] bg-bluedark/20 backdrop-blur-lg
+ md:bg-[#191B26] md:w-[85%] md:flex md:justify-end md:min-h-0"
 >
 
-  <div class="flex justify-end  items-center p-6" (click)="closeNavbar.emit()">
+  <div class="flex justify-end items-center cursor-pointer p-6 md:hidden" (click)="closeNavbar.emit()">
     <img src="./assets/shared/icon-close.svg" alt="">
   </div>
-  <ul class="flex flex-col md:flex-row gap-4  uppercase p-10 font-barlow-condensed">
-    <li><a routerLink="/"> <span>00</span> Home</a></li>
-    <li><a routerLink="/destination"><span>01</span> Destination</a></li>
-    <li><a routerLink="/crew"><span>02</span> Crew</a></li>
-    <li><a routerLink="/technology"><span>03</span> Technology</a></li>
+  <ul class="flex flex-col gap-4  uppercase p-10 font-barlow-condensed md:flex-row">
+    <li><a routerLink="/" (click)="closeNavbar.emit()"> <span>00</span> Home</a></li>
+    <li><a routerLink="/destination" (click)="closeNavbar.emit()"><span>01</span> Destination</a></li>
+    <li><a routerLink="/crew" (click)="closeNavbar.emit()"><span>02</span> Crew</a></li>
+    <li><a routerLink="/technology" (click)="closeNavbar.emit()"><span>03</span> Technology</a></li>
   </ul>
 </nav>
 

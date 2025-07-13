@@ -1,46 +1,44 @@
-<div class="absolute inset-0 h-[100vh] bg-[url('/assets/crew/background-crew-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')] z-[-10]">
-</div>
+<div
+  class="fixed inset-0 h-[100vh] bg-[url('/assets/crew/background-crew-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')] z-[-10]"
+></div>
 
+<div class="text-center my-5">
+  <h2
+    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[15px]"
+  >
+    02 Meet your crew
+  </h2>
 
+  <p class="text-gray-500 text-xl uppercase mt-14 mb-2">
+    {{ selectedCrew.role }}
+  </p>
 
-<div>
-  02 Meet your crew
+  <p class="text-[20px] uppercase font-bellefair text-white mb-4">
+    {{ selectedCrew.name }}
+  </p>
 
-  Commander
-  Douglas Hurley
+  <p class="leading-[1.8] text-[14px] mx-auto w-[300px]">
+    {{ selectedCrew.bio }}
+  </p>
 
-  Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-  and former NASA astronaut. He launched into space for the third time as
-  commander of Crew Dragon Demo-2.
+  <ul
+    class="flex justify-center items-center gap-4 mt-16 mb-10 font-barlow-condensed"
+  >
+    @for (crew of crews; track crew.name) {
+    <li
+      class="w-3 h-3 rounded-full cursor-pointer transition-colors duration-300"
+      [ngClass]="{
+        'bg-white': selectedCrew.name === crew.name,
+        'bg-gray-600 hover:bg-gray-400': selectedCrew.name !== crew.name
+      }"
+      (click)="selectCrew(crew.name)"
+    ></li>
+    }
+  </ul>
 
-
-
-  Mission Specialist
-  Mark Shuttleworth
-
-  Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind
-  the Linux-based Ubuntu operating system. Shuttleworth became the first South
-  African to travel to space as a space tourist.
-
-
-
-
-  Pilot
-  Victor Glover
-
-  Pilot on the first operational flight of the SpaceX Crew Dragon to the
-  International Space Station. Glover is a commander in the U.S. Navy where
-  he pilots an F/A-18.He was a crew member of Expedition 64, and served as a
-  station systems flight engineer.
-
-
-
-
-  Flight Engineer
-  Anousheh Ansari
-
-  Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems.
-  Ansari was the fourth self-funded space tourist, the first self-funded woman to
-  fly to the ISS, and the first Iranian in space.
-
+  <img
+    [src]="selectedCrew.images.webp"
+    alt="{{ selectedCrew.name }} image"
+    class="w-80 mx-auto my-5"
+  />
 </div>
