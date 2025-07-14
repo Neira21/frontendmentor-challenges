@@ -5,7 +5,7 @@
 /* bellefair regular, Barlow Condensed Regular Barlow Regular */
 
 @font-face {
-  src: url("/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
+  src: url("assets/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
   font-weight: 400;
   font-family: "bellefair";
   font-style: normal;
@@ -13,7 +13,7 @@
 }
 
 @font-face {
-  src: url("/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf")
+  src: url("assets/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf")
     format("truetype");
   font-weight: 400;
   font-family: "barlow-condensed";
@@ -22,7 +22,7 @@
 }
 
 @font-face {
-  src: url("/fonts/Barlow/Barlow-Regular.ttf") format("trueetype");
+  src: url("assets/fonts/Barlow/Barlow-Regular.ttf") format("trueetype");
   font-weight: 400;
   font-family: "barlow";
   font-style: normal;
