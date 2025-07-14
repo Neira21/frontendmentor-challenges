@@ -4,41 +4,53 @@
 
 <div class="text-center my-5">
   <h2
-    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[15px]"
+    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[18px] md:text-left md:ml-20"
   >
-    02 Meet your crew
+    <span class="text-gray-600 font-bold text-xl mr-5"> 02 </span>
+    Meet your crew
   </h2>
 
-  <p class="text-gray-500 text-xl uppercase mt-14 mb-2">
-    {{ selectedCrew.role }}
-  </p>
+  <div id="main-info" class="flex flex-col lg:flex-row mt-10">
+    <div class="lg:relative lg:flex-1 lg:text-left lg:pl-10 lg:content-center">
+      <div class="lg:ml-10">
+        <p class="text-gray-500 text-xl uppercase mt-14 mb-2 md:text-2xl lg:text-4xl">
+          {{ selectedCrew.role }}
+        </p>
 
-  <p class="text-[20px] uppercase font-bellefair text-white mb-4">
-    {{ selectedCrew.name }}
-  </p>
+        <p class="text-[20px] uppercase font-bellefair text-white mb-4 md:text-3xl lg:text-7xl">
+          {{ selectedCrew.name }}
+        </p>
 
-  <p class="leading-[1.8] text-[14px] mx-auto w-[300px]">
-    {{ selectedCrew.bio }}
-  </p>
+        <p class="leading-[1.8] text-[14px] mx-auto w-[300px] md:w-[460px] lg:mx-0 text-3xl">
+          {{ selectedCrew.bio }}
+        </p>
 
-  <ul
-    class="flex justify-center items-center gap-4 mt-16 mb-10 font-barlow-condensed"
-  >
-    @for (crew of crews; track crew.name) {
-    <li
-      class="w-3 h-3 rounded-full cursor-pointer transition-colors duration-300"
-      [ngClass]="{
-        'bg-white': selectedCrew.name === crew.name,
-        'bg-gray-600 hover:bg-gray-400': selectedCrew.name !== crew.name
-      }"
-      (click)="selectCrew(crew.name)"
-    ></li>
-    }
-  </ul>
+      </div>
 
-  <img
-    [src]="selectedCrew.images.webp"
-    alt="{{ selectedCrew.name }} image"
-    class="w-80 mx-auto my-5"
-  />
+      <ul
+        class="flex justify-center items-center gap-4 mt-16 mb-10 font-barlow-condensed lg:absolute lg:bottom-0 lg:ml-10 "
+      >
+        @for (crew of crews; track crew.name) {
+        <li
+          class="w-3 h-3 rounded-full cursor-pointer transition-colors duration-300"
+          [ngClass]="{
+            'bg-white': selectedCrew.name === crew.name,
+            'bg-gray-600 hover:bg-gray-400': selectedCrew.name !== crew.name
+          }"
+          (click)="selectCrew(crew.name)"
+        ></li>
+        }
+      </ul>
+    </div>
+
+    <div class="relative lg:flex-1">
+      <img
+        [src]="selectedCrew.images.webp"
+        alt="{{ selectedCrew.name }} image"
+        class="w-80 mx-auto my-5 md:w-100"
+      />
+      <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+
+    </div>
+  </div>
 </div>

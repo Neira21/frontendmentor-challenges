@@ -1,33 +1,39 @@
-<nav class="absolute top-0 right-0 z-20 min-h-[100%] w-[65%] bg-bluedark/20 backdrop-blur-lg
- md:bg-[#191B26] md:w-[85%] md:flex md:justify-end md:min-h-0"
+<nav
+  class="absolute top-0 right-0 z-20 min-h-[100%] w-[65%] bg-bluedark/20 backdrop-blur-lg md:bg-[#191B26] md:w-[600px] md:flex md:justify-end md:min-h-0"
 >
-
-  <div class="flex justify-end items-center cursor-pointer p-6 md:hidden" (click)="closeNavbar.emit()">
-    <img src="./assets/shared/icon-close.svg" alt="">
+  <div
+    class="flex justify-end items-center cursor-pointer p-6 md:hidden"
+    (click)="closeNavbar.emit()"
+  >
+    <img src="./assets/shared/icon-close.svg" alt="" />
   </div>
-  <ul class="flex flex-col gap-4  uppercase p-10 font-barlow-condensed md:flex-row">
-    <li><a routerLink="/" (click)="closeNavbar.emit()"> <span>00</span> Home</a></li>
-    <li><a routerLink="/destination" (click)="closeNavbar.emit()"><span>01</span> Destination</a></li>
-    <li><a routerLink="/crew" (click)="closeNavbar.emit()"><span>02</span> Crew</a></li>
-    <li><a routerLink="/technology" (click)="closeNavbar.emit()"><span>03</span> Technology</a></li>
+  <ul
+    class="flex flex-col gap-4 uppercase p-10 font-barlow-condensed md:flex-row"
+  >
+    @for(link of links; track link.label) {
+    <li
+      [routerLink]="link.path"
+      (click)="setSelected(link.label); closeNavbar.emit()"
+      routerLinkActive="active-link"
+      #rla="routerLinkActive"
+      [ngClass]="
+        rla.isActive
+          ? 'border-r-4 md:border-r-0 md:border-b-4 border-white'
+          : 'border-transparent hover:border-r-2 md:hover:border-r-0 md:hover:border-b-2 hover:border-white'
+      "
+      class="transition-all duration-300 px-4 py-2 cursor-pointer text-white"
+    >
+      {{ link.label }}
+    </li>
+    }
   </ul>
 </nav>
 
-
-<style>
-
-  a{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    letter-spacing: 4px;
-
-  }
-  span{
-    font-weight: 700;;
-
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
+<!--
+[ngClass]="
+        rla.isActive
+          ? 'after:w-full after:bg-white after:h-[4px] after:absolute after:-bottom-6 after:left-0 after:content-[\'\'] after:transition-all after:duration-500'
+          : 'hover:after:w-full hover:after:bg-white hover:after:h-[2px] hover:after:absolute hover:after:-bottom-6 hover:after:left-0 hover:after:content-[\'\'] hover:after:transition-all hover:after:duration-500'
+      "
+      class="relative transition-all duration-300 px-2 tracking cursor-pointer decoration-0 tracking-[4px] text-white"
+ -->

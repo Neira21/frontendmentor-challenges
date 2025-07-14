@@ -1,51 +1,54 @@
-<div class="fixed inset-0 h-[100vh] bg-[url('/assets/technology/background-technology-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')] z-[-10]">
-
-</div>
+<div
+  class="fixed inset-0 h-[100vh] bg-[url('/assets/technology/background-technology-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')] z-[-10]"
+></div>
 
 <div class="text-center my-5">
-  <h2 class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[15px]">
-    03 Space launch 101
+  <h2
+    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[18px] md:text-left md:ml-20"
+  >
+    <span class="text-gray-600 font-bold text-xl mr-5"> 03 </span>
+    Space launch 101
   </h2>
 
-  <div class="w-full ">
-    <img
-      [src]="selectedTech.images.portrait"
-      alt="{{ selectedTech.name }} image"
-      class=" mx-auto my-16 "
-    />
+  <div class="flex flex-col lg:flex-row mt-10">
+    <div class="w-full lg:flex-1 lg:order-2">
+      <img
+        [src]="selectedTech.images.portrait"
+        alt="{{ selectedTech.name }} image"
+        class="mx-auto my-16 bg-cover bg-center"
+      />
+    </div>
+
+    <div class="lg:flex-1  lg:flex lg:flex-row ">
+      <ul class="flex justify-center items-center gap-4 font-barlow-condensed lg:flex-col lg:flex-1 ">
+        @for (tech of techs; track tech.name; let i = $index) {
+        <li
+          class="p-7 w-7 h-7 flex justify-center items-center rounded-full cursor-pointer transition-colors duration-300 border"
+          [ngClass]="{
+            'bg-white text-black': selectedTech.name === tech.name,
+            'border-gray-700 hover:border-white':
+              selectedTech.name !== tech.name
+          }"
+          (click)="selectTech(tech.name)"
+        >
+          {{ i + 1 }}
+        </li>
+        }
+      </ul>
+      <div class="lg:content-center lg:text-left">
+        <p class="text-gray-500 text-xl uppercase mt-7 mb-2 md:text-2xl">
+          The terminology...
+        </p>
+        <p
+          class="text-[20px] uppercase font-bellefair text-white mb-4 md:text-3xl lg:text-5xl"
+        >
+          {{ selectedTech.name }}
+        </p>
+
+        <p class="leading-[1.8] text-[14px] mx-auto w-[320px] md:w-[460px] lg:w-[400px]">
+          {{ selectedTech.description }}
+        </p>
+      </div>
+    </div>
   </div>
-
-  <ul
-    class="flex justify-center items-center gap-4 font-barlow-condensed"
-  >
-    @for (tech of techs; track tech.name; let i = $index) {
-    <li
-      class="p-4 w-4 h-4 flex justify-center items-center rounded-full cursor-pointer transition-colors duration-300 border"
-      [ngClass]="{
-        'bg-white text-black': selectedTech.name === tech.name,
-        'border-gray-700 hover:border-white': selectedTech.name !== tech.name
-      }"
-      (click)="selectTech(tech.name)"
-    >
-      {{ i + 1 }}
-    </li>
-    }
-  </ul>
-
-
-  <p class="text-gray-500 text-xl uppercase mt-7 mb-2">
-    The terminology...
-  </p>
-  <p class="text-[20px] uppercase font-bellefair text-white mb-4">
-    {{ selectedTech.name }}
-  </p>
-
-  <p class="leading-[1.8] text-[14px] mx-auto w-[320px]">
-    {{ selectedTech.description }}
-  </p>
-
-
-
-
-
 </div>

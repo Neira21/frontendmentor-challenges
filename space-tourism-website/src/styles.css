@@ -3,48 +3,42 @@
 /* bellefair regular, Barlow Condensed Regular Barlow Regular */
 
 @font-face {
-  src: url( '/fonts/Bellefair/Bellefair-Regular.ttf') format('truetype');
+  src: url("/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-family: 'bellefair';
+  font-family: "bellefair";
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  src: url( '/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf') format('truetype');
+  src: url("/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf")
+    format("truetype");
   font-weight: 400;
-  font-family: 'barlow-condensed';
+  font-family: "barlow-condensed";
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  src: url( '/fonts/Barlow/Barlow-Regular.ttf') format('trueetype');
+  src: url("/fonts/Barlow/Barlow-Regular.ttf") format("trueetype");
   font-weight: 400;
-  font-family: 'barlow';
+  font-family: "barlow";
   font-style: normal;
   font-display: swap;
 }
 
-
-@theme{
+@theme {
   --color-bluedark: hsl(230, 35%, 7%);
-  --color-bluelight:  hsl(231, 77%, 90%);
+  --color-bluelight: hsl(231, 77%, 90%);
   --white: hsl(0, 0%, 100%);
 
-  --font-bellefair: 'bellefair';
-  --font-barlow-condensed: 'barlow-condensed';
-  --font-barlow: 'barlow';
+  --font-bellefair: "bellefair";
+  --font-barlow-condensed: "barlow-condensed";
+  --font-barlow: "barlow";
 }
 
-
-
-
-
-
-
-@Layer components{
-  .img{
+@layer components {
+  .img {
     @apply block;
   }
 }

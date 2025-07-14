@@ -1,58 +1,76 @@
 <div
-  class="fixed inset-0  bg-[url('/assets/destination/background-destination-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')] z-[-10]"
+  class="fixed inset-0 bg-[url('/assets/destination/background-destination-mobile.jpg')] bg-cover bg-no-repeat bg-center md:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')] z-[-10]"
 ></div>
 
-<div class=" text-center my-5">
-
+<div class="text-center my-5">
   <h2
-    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[15px]"
+    class="uppercase font-barlow-condensed leading-[33.6px] tracking-[4px] text-[18px] md:text-left md:ml-20"
   >
-    01 Pick your destination
+    <span class="text-gray-600 font-bold text-xl mr-5"> 01 </span>
+    Pick your destination
   </h2>
 
-  <img
-    [src]="selectedDestination.images.webp"
-    alt="{{ selectedDestination.name }} image"
-    class="w-40 mx-auto my-16"
-  />
+  <div id="main-info" class="flex flex-col lg:flex-row mt-10">
+    <div class="lg:flex-1">
+      <img
+        [src]="selectedDestination.images.webp"
+        alt="{{ selectedDestination.name }} image"
+        class="w-40 mx-auto my-10 md:w-80 lg:w-120"
+      />
 
-  <ul class="flex justify-center items-center gap-4 my-10 font-barlow-condensed ">
-    @for (destination of destinations; track destination.name) {
-    <li
-      class="relative uppercase tracking-[4px] text-[14px] cursor-pointer transition-colors duration-300 text-white after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:w-full after:transition-all after:duration-300"
-      [ngClass]="{
-        'after:h-[3px] after:bg-white':
-          selectedDestination.name === destination.name,
-        'hover:after:h-[2px] hover:after:bg-gray-400 after:h-0':
-          selectedDestination.name !== destination.name
-      }"
-      (click)="selectDestination(destination.name)"
-    >
-      {{ destination.name }}
-    </li>
-    }
-  </ul>
+    </div>
 
-  <p class="text-[56px] uppercase font-bellefair  text-white ">
-    {{ selectedDestination.name }}
-  </p>
+    <div class="lg:flex-1">
+      <ul
+        class="flex justify-center items-center gap-4 my-7 font-barlow-condensed"
+      >
+        @for (destination of destinations; track destination.name) {
+        <li
+          class="relative uppercase tracking-[4px] text-[17px] cursor-pointer transition-colors duration-300 text-white after:content-[''] after:absolute after:left-0 after:bottom-[-15px] after:w-full after:transition-all after:duration-300"
+          [ngClass]="{
+            'after:h-[3px] after:bg-white':
+              selectedDestination.name === destination.name,
+            'hover:after:h-[2px] hover:after:bg-gray-400 after:h-0':
+              selectedDestination.name !== destination.name
+          }"
+          (click)="selectDestination(destination.name)"
+        >
+          {{ destination.name }}
+        </li>
+        }
+      </ul>
 
+      <p class="text-[90px] uppercase font-bellefair text-white">
+        {{ selectedDestination.name }}
+      </p>
 
-  <p class="leading-[1.8] text-[14px] mx-auto w-[300px]">
-    {{ selectedDestination.description }}
-  </p>
+      <p class="leading-[1.8] text-[14px] mx-auto w-[300px] md:w-[460px]">
+        {{ selectedDestination.description }}
+      </p>
 
-  <hr class="w-[80%] mx-auto border border-bluelight/30 my-5 " />
+      <hr class="w-[80%] mx-auto border border-bluelight/30 my-5" />
 
+      <div class="flex flex-col md:flex-row justify-between items-center mx-auto w-[300px] mb-6 md:w-[460px]">
+        <div>
+          <p
+            class="text-sm font-barlow-condensed tracking-[3px] uppercase mb-1"
+          >
+            Avg. distance
+          </p>
+          <p class="text-white text-3xl mb-6 md:mb-0">
+            {{ selectedDestination.distance }}
+          </p>
+        </div>
 
-
-      <p class="text-sm font-barlow-condensed tracking-[3px] uppercase mb-1">Avg. distance</p>
-      <p class="text-white text-3xl mb-6">{{ selectedDestination.distance }}</p>
-
-      <p class="text-sm font-barlow-condensed tracking-[3px] uppercase mb-1">Est. travel time</p>
-      <p class="text-white text-3xl">{{ selectedDestination.travel }}</p>
-
-
-
-
+        <div>
+          <p
+            class="text-sm font-barlow-condensed tracking-[3px] uppercase mb-1"
+          >
+            Est. travel time
+          </p>
+          <p class="text-white text-3xl">{{ selectedDestination.travel }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
