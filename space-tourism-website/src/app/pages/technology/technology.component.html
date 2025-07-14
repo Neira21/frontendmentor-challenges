@@ -10,12 +10,12 @@
     Space launch 101
   </h2>
 
-  <div class="flex flex-col lg:flex-row mt-10">
-    <div class="w-full lg:flex-1 lg:order-2">
+  <div class="flex flex-col lg:flex-row mt-10 lg:gap-10">
+    <div class="w-full lg:flex-1 lg:order-2 overflow-hidden flex justify-center items-center relative h-[500px]">
       <img
         [src]="selectedTech.images.portrait"
         alt="{{ selectedTech.name }} image"
-        class="mx-auto my-16 bg-cover bg-center"
+        class="mx-auto absolute top-[-30px] bg-cover bg-center"
       />
     </div>
 

@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* bellefair regular, Barlow Condensed Regular Barlow Regular */
 
@@ -27,15 +29,6 @@
   font-display: swap;
 }
 
-@theme {
-  --color-bluedark: hsl(230, 35%, 7%);
-  --color-bluelight: hsl(231, 77%, 90%);
-  --white: hsl(0, 0%, 100%);
-
-  --font-bellefair: "bellefair";
-  --font-barlow-condensed: "barlow-condensed";
-  --font-barlow: "barlow";
-}
 
 @layer components {
   .img {
